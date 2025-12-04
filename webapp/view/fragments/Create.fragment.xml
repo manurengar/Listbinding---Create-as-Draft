@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:core="sap.ui.core">
+
+  <Label id="territoryIdLabelCreate" required="true" text="Territory ID"></Label>
+  <Input id="territoryIdInputCreate" placeholder="05813" valueLiveUpdate="true" width='5rem' value="{path: 'oModel>/TerritoryID', type: 'sap.ui.model.type.String', constraints: { maxLength: 5 } }" maxLength="5" enabled="{isEnabled>/isEnabled}"></Input>
+  <Label id="territoryDescriptionLabelCreate" text="Territory Description"></Label>
+  <Input id="territoryDescriptionInputCreate" maxLength="50" valueLiveUpdate="true" width='7.5rem' value="{path: 'oModel>/TerritoryDescription', type: 'sap.ui.model.type.String', constraints: { maxLength: 50 } }" placeholder="New York" enabled="{isEnabled>/isEnabled}"></Input>
+  <Label id="RegionLabelCreate" text="Region"></Label>
+  <Input id="RegionInputCreate" placeholder="14" width='2.2rem' valueLiveUpdate="true" value="{oModel>/RegionID}" enabled="{isEnabled>/isEnabled}"></Input>
+</core:FragmentDefinition>

@@ -1,0 +1,59 @@
+<mvc:View controllerName="mrg.sample.controller.Main" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" core:require="{
+		formatter: 'mrg/sample/model/formatter'
+	}">
+	<Page id="mainPage">
+		<headerContent>
+			<Title id="mainPageHeaderTitle" text="OData V2 - ODataListBinding#Create"></Title>
+		</headerContent>
+		<content>
+
+			<Panel id="mainPagePanelForm" expandable="true" width="auto" headerText="{i18n>creationPanel}" class="sapUiResponsiveMargin">
+				<form:SimpleForm id="mainSimpleForm" layout="ResponsiveGridLayout">
+					<form:toolbar>
+						<Toolbar id="mainToolbar">
+							<content>
+								<ToolbarSpacer id="mainToolbarspace"></ToolbarSpacer>
+								<Button id="createDraftBtn" icon="sap-icon://add" press=".onCreateDraft" text="{i18n>addEntryDraft}"></Button>
+								<Button id="createEntryBtn" icon="sap-icon://save" press=".onCreateEntry" text="{i18n>saveEntry}"></Button>
+								<Button id="saveEntityBtn" icon="sap-icon://save" press=".onSave" text="{i18n>saveAsDraft}" visible="false"></Button>
+								<Button id="deleteEntityBtn" icon="sap-icon://delete" press=".onDelete" text="Delete"></Button>
+							</content>
+						</Toolbar>
+					</form:toolbar>
+				</form:SimpleForm>
+			</Panel>
+
+			<Table id="mainPageTable" growing="true" alternateRowColors="true" growingThreshold="60" items="{Northwind>/Territories}">
+				<columns>
+					<Column id="colTerritoryId">
+						<Text id="colTextTerritoryId" text="Territory ID"/>
+					</Column>
+					<Column id="colTerritoryDescription">
+						<Text id="colTextTerritoryDescription" text="Territory Description"/>
+					</Column>
+					<Column id="colRegionId">
+						<Text id="colTextRegionId" text="Region ID"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="mainTableColumnListItems" type="Navigation" press=".onPressItem">
+						<cells>
+							<Text id="bodyTerritoryId" text="{Northwind>TerritoryID}" />
+							<Text id="bodyTerritoryDescription" text="{Northwind>TerritoryDescription}" />
+							<Text id="bodyRegionId" text="{Northwind>RegionID}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<OverflowToolbar id="footerToolbar">
+				<Button id="submitBtn" press=".onSubmit" text="Submit entries" icon="sap-icon://cause"></Button>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

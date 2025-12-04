@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:core="sap.ui.core">
+
+  <Label id="territoryIdLabelEdit" required="true" text="Territory ID"></Label>
+  <Input id="territoryIdInputEdit" editable='false' width='5rem' value="{path: 'Northwind>TerritoryID', type: 'sap.ui.model.type.String', constraints: { maxLength: 20 } }" maxLength="20"></Input>
+  <Label id="territoryDescriptionLabelEdit" text="Territory Description"></Label>
+  <Input id="territoryDescriptionInputEdit" maxLength="50" valueLiveUpdate="true" width='7.5rem' value="{path: 'Northwind>TerritoryDescription', type: 'sap.ui.model.type.String', constraints: { maxLength: 50 } }" placeholder="New York"></Input>
+  <Label id="RegionLabelEdit" text="Region"></Label>
+  <Input id="RegionInputEdit" placeholder="14" width='2.2rem' valueLiveUpdate="true" value="{path: 'Northwind>RegionID'}"></Input>
+</core:FragmentDefinition>
